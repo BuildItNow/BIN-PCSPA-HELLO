@@ -1,0 +1,39 @@
+<p>BIN is a lightweight frontend framework, follow the KISS principle. Easy but Powerful. It can be used to develop moble app, web app and even desktop app.<br><br/></p>
+<h2 id="[document](http://101.200.215.114/apps/bin/document.html)-[example](http://101.200.215.114/apps/tutorials/index.html)"><a name="[document](http://101.200.215.114/apps/bin/document.html)-[example](http://101.200.215.114/apps/tutorials/index.html)" href="#[document](http://101.200.215.114/apps/bin/document.html)-[example](http://101.200.215.114/apps/tutorials/index.html)"></a><a href="http://101.200.215.114/apps/bin/document.html">Document</a> <a href="http://101.200.215.114/apps/tutorials/index.html">Example</a></h2>
+<h2 id="how-to-use"><a name="how-to-use" href="#how-to-use"></a>How to use</h2>
+<p>you can use the bitnow-cli to generate project from available template.</p>
+<h3 id="install-bitnow-cli"><a name="install-bitnow-cli" href="#install-bitnow-cli"></a>Install bitnow-cli</h3>
+<pre><code class="bash">$ npm install -g bitnow-cli
+</code></pre>
+<h3 id="generate-project-from-template"><a name="generate-project-from-template" href="#generate-project-from-template"></a>Generate project from template</h3>
+<pre><code class="bash">$ bitnow init &lt;project-name&gt; [template-name]
+</code></pre>
+<h3 id="run-the-project"><a name="run-the-project" href="#run-the-project"></a>Run the project</h3>
+<p>BIN is base on AMD to manage modules, so there is no need to compile and build for development. But on the other side, BIN does’t use npm to handle dependencies.</p>
+<pre><code class="bash">$ npm start
+</code></pre>
+<h3 id="build-the-project"><a name="build-the-project" href="#build-the-project"></a>Build the project</h3>
+<p>Build project for production. Bundle the framework, add version informations …</p>
+<pre><code class="bash">$ npm run build
+</code></pre>
+<h3 id="list-available-template"><a name="list-available-template" href="#list-available-template"></a>List available template</h3>
+<pre><code class="bash">$ bitnow list
+</code></pre>
+<h3 id="update-to-the-latest-framework"><a name="update-to-the-latest-framework" href="#update-to-the-latest-framework"></a>Update to the latest framework</h3>
+<p>The whole source code of framework comes to bin directory.</p>
+<pre><code class="bash">$ bitnow update
+</code></pre>
+<h2 id="auto-generate-code"><a name="auto-generate-code" href="#auto-generate-code"></a>Auto generate code</h2>
+<p>bitnow-cli provides some useful view templates to generate the base view code.</p>
+<h3 id="create-view-code"><a name="create-view-code" href="#create-view-code"></a>Create view code</h3>
+<pre><code class="bash">$ bitnow view create &lt;view-path&gt; [template-name]
+</code></pre>
+<p>the <code>view-path</code> is based on you current path, so <code>index</code> will create <em>index.html</em> and <em>index.js</em> in current path, and <code>login/index</code> will create <em>index.html</em> and <em>index.js</em> in <em>./login</em>, the parent path will be created by cli if not exists.<br><br/><br>In BIN, each view consists of <strong>two files</strong>: <strong>.html</strong> describes the structure and appearance, <strong>.js</strong> describes the logic of business and the <strong>ViewModel</strong> links them together. So it’s more close to traditional web development and even close to traditional GUI application development.</p>
+<h3 id="list-available-view-template"><a name="list-available-view-template" href="#list-available-view-template"></a>List available view template</h3>
+<pre><code class="bash">$ bitnow view list
+</code></pre>
+<h2 id="description"><a name="description" href="#description"></a>Description</h2>
+<ul>
+<li><em>bin</em> : framework code <br/></li><li><em>config</em> : config files<br/></li><li><em>index-spa.html</em> : boot index file for SPA<br/></li><li><em>index-web.html</em> : boot index file for web<br/></li></ul>
+<h2 id="license"><a name="license" href="#license"></a>LICENSE</h2>
+<p>MIT</p>

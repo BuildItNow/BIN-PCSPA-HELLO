@@ -1,0 +1,44 @@
+<div id="locate" class="page-content-wrapper">
+	<style>
+        #locate .side-wrapper
+        {
+            position: relative;
+            -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+            box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+        }
+
+        #locate .map-container
+        {
+            height: 100%;
+        }
+
+        #locate .map-header
+        {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            font-size: 14px;
+            line-height: inherit;
+            padding: 0.5em 1em;
+            background: linear-gradient(to right, #347effff, #1ea3ffdd);
+
+            color: white;
+        }
+	</style>
+    <section class="side-wrapper" :style="{height:height}">
+        <div id="mapContainer" class="map-container">
+        </div>
+        <div class="map-header">
+            {{title}}
+        </div>
+    </section>
+    <aside class="side-bar" v-fixedsidebar>
+        <header class="side-bar-header">NAVIGATION</header>
+        <ul>
+            <li v-route:pop>
+                GO BACK
+            </li>
+        </ul>
+    </aside>
+</div>

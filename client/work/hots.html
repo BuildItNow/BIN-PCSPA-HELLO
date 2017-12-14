@@ -1,0 +1,100 @@
+<div id="hots">
+	<style>
+    #hots .hots-list
+    {
+        padding: 0;
+        margin: 0;
+    }
+
+    #hots .hots-item
+    {
+        min-height: 150px;
+        border-bottom: 1px solid #eff1f5;
+        padding-bottom: 30px;
+        margin-bottom: 30px;
+
+        display: flex;
+        display: -webkit-flex;
+    }
+
+    #hots .hots-item:last-child
+    {
+        margin-bottom: 0;
+        border: none;
+    }
+
+    #hots .hot-icon
+    {
+        width: 160px;
+        height: 110px;
+
+        margin: 0;
+
+        flex-shrink: 0;
+
+        -webkit-box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+        box-shadow: 0 3px 9px rgba(0, 0, 0, .5);
+
+        cursor: pointer;
+    }
+
+    #hots .hot-content
+    {
+        margin-left: 1em;
+    }
+
+    #hots .hot-content .name
+    {
+        text-align: left;
+        font-size: 18px;
+        line-height: 1;
+        font-weight: bold;
+        margin: 0;
+        color: #4caf50;
+
+        width: fit-content;
+
+        cursor: pointer;
+    }
+
+    #hots .hot-content .addr
+    {
+        margin-left: 1em;
+        font-size: 12px;
+        color: #c6c6c6;
+        vertical-align: bottom;
+    }
+
+    #hots .hot-content .locate
+    {
+        width: 8px;
+        height: 12px;
+        vertical-align: bottom;
+        margin-left: 0.25em;
+        opacity: 0.5;
+
+        background-color: transparent;
+    }
+
+    #hots .hot-content .desc
+    {
+        margin-top: 0.25em;
+        line-height: inherit;
+        font-size: 14px;
+        word-break: break-all;
+    }
+	</style>
+    <ul class="hots-list">
+        <li class="hots-item" v-for="item in hots" >
+            <img class="hot-icon" :src="item.icon" @click="gotoHotLocate(item)"></img>
+            <div class="hot-content">
+                <div class="name" @click="gotoHotLocate(item)">
+                    {{item.name}}<span class="addr">{{item.addr}}</span><img class="locate" src="work/img/locate.png"></img>
+                </div>
+                <div class="desc">
+                    {{item.desc}}
+                </div>
+            </div>
+        </li>
+    </ul>
+</div>

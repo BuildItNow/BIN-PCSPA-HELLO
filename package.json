@@ -1,0 +1,37 @@
+{
+  "name": "BIN-MPA-HELLO",
+  "description": "BIN multiple page application template",
+  "version": "1.0.0",
+  "license": "MIT",
+  "author": {
+    "name": "Yang G",
+    "email": "pinner@mail.ustc.edu.cn"
+  },
+  "homepage": "https://github.com/BuildItNow/BIN",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BuildItNow/BIN.git"
+  },
+  "dependencies": {},
+  "devDependencies": {
+    "colors": "^1.1.2",
+    "commander": "^2.9.0",
+    "fs-extra": "^2.1.2",
+    "glob": "^7.1.2",
+    "gulp": "^3.9.0",
+    "gulp-clean-css": "^3.9.0",
+    "gulp-filter": "^5.0.1",
+    "gulp-htmlmin": "^3.0.0",
+    "gulp-notify": "^2.2.0",
+    "gulp-uglify": "^3.0.0",
+    "md5": "^2.2.1",
+    "through2": "^0.6.5",
+    "browser-sync": "^2.18.8",
+    "bufferstreams": "^1.1.1"
+  },
+  "scripts": {
+    "start": "node ./server/dev.js",
+    "build": "gulp build",
+    "build-start": "node ./server/pro.js"
+  }
+}

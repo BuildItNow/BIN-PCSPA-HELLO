@@ -1,0 +1,60 @@
+<div id="about" class="page-content-wrapper">
+	<style>
+    #about .logo
+    {
+        text-align: center;
+        font-size: 120px;
+
+        color: black;
+        opacity: 0.05;
+    }
+	</style>
+    <div v-show="current==='post'">
+        <route path="regex:about/(bin|cli)" view="view!about/post"></route>
+    </div>
+    <div v-show="current==='index'">
+        <section class="side-wrapper" :style="{height:height}"> 
+            <div class="logo" :style="{lineHeight:height}">   
+                <span class="glyphicon ion-cube"></span>
+            </div>
+        </section>
+        <aside class="side-bar" v-fixedsidebar>
+            <div>
+                <header class="side-bar-header">ABOUT</header>
+                <ul>
+                    <li v-route="about/bin" activeStyle="active">
+                        BIN
+                    </li>
+                    <li v-route="about/cli" activeStyle="active">
+                        CLI
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <header class="side-bar-header">COMMONS</header>
+                <ul>
+                    <li @click="signout">
+                        Sign out
+                    </li>
+                    <li @click="changePassword">
+                        Change Password
+                    </li>
+                </ul>
+            </div>
+            <div>
+                <header class="side-bar-header">COMPONENTS</header>
+                <ul>
+                    <li @click="showStatus">
+                        Status
+                    </li>
+                    <li @click="showIndicator">
+                        Indicator
+                    </li>
+                    <li @click="showAlert">
+                        Alert
+                    </li>
+                </ul>
+            </div>
+        </aside>
+    </div>
+</div>

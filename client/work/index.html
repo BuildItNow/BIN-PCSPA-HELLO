@@ -1,0 +1,22 @@
+<div id="homeIndex" class="page-content-wrapper">
+	<style>
+    </style>
+	<section class="side-wrapper">
+        <route path="work/detail" view="view!work/detail"></route>
+        <route path="work/hots" view="view!work/hots"></route>
+    </section>
+    <aside class="side-bar" v-fixedsidebar>
+        <header class="side-bar-header">CHONG QING</header>
+        <ul>
+            <li v-route="work/detail" activeStyle="active">
+                Detail
+            </li>
+            <li v-route="locate" activeStyle="active">
+                Locate
+            </li>
+            <li v-route="work/hots" activeStyle="active">
+                Hots
+            </li>
+        </ul>
+    </aside>
+</div>

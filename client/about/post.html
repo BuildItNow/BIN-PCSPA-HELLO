@@ -1,0 +1,232 @@
+<div id="post">
+    <style>
+    #post .post-title
+    {
+        font-size: 2.2em;
+        font-weight: bold;
+        color: #222;
+
+        border-left: 5px solid #347eff;
+        padding-left: 10px;
+        line-height: 1.5;
+
+        cursor: pointer;
+
+        letter-spacing: 0.1rem;
+
+        transition: .2s color;
+
+        margin-bottom: 48px;
+    }
+
+    #post .post-title:hover
+    {
+        color: #347eff;
+    }
+
+    #post .side-bar i
+    {
+        color: #347eff;
+        padding-right: 5px;
+    }
+
+    #post .side-bar ul li
+    {
+        text-transform: none;
+    }
+
+    #postContent
+    {
+        padding: 0;
+    }
+
+    #postContent pre.hljs, #postContent pre > code 
+    {
+        display: block;
+        padding: 15px 0 0 0;
+        position: relative;
+        background-color: transparent;
+
+        font-weight: normal;
+        font-style: normal;
+    }
+
+    #postContent code.mermaid
+    {
+        text-align: center;
+    }
+
+    #postContent code.html:after,
+    #postContent code.javascript:after,
+    #postContent code.css:after,
+    #postContent code.mermaid:after,
+    #postContent code.bash:after,
+    #postContent code.cs:after,
+    #postContent code.cpp:after,
+    #postContent code.java:after,
+    #postContent code.objectivec:after
+    {
+        position: absolute;
+        top: 0;
+        right: 0;
+        color: #ccc;
+        text-align: right;
+        font-size: 12px;
+        padding: 0;
+        line-height: 15px;
+        height: 15px;
+
+        font-weight: normal;
+    }
+
+    #postContent code.html:after 
+    {
+        content: "HTML";
+    }
+
+    #postContent code.javascript:after 
+    {
+        content: "JS";
+    }
+
+    #postContent code.css::after 
+    {
+        content: "CSS";
+    }
+
+    #postContent code.mermaid::after 
+    {
+        content: "MERMAID";
+    }
+
+    #postContent code.bash:after 
+    {
+        content: "BASH";
+    }
+
+    #postContent code.cs:after 
+    {
+        content: "C#";
+    }
+
+    #postContent code.cpp:after 
+    {
+        content: "C++";
+    }
+
+    #postContent code.objectivec:after 
+    {
+        content: "OBJECTIVE-C";
+    }
+
+    #postContent code.java:after 
+    {
+        content: "JAVA";
+    }
+
+    #postContent pre
+    {
+        border: none;
+        background-color: #eff1f588;
+    }
+
+    #postContent h2
+    {
+        border-bottom: 1px solid #eff1f5;
+    }
+
+    #postContent p > code, 
+    #postContent li > code, 
+    #postContent td > code, 
+    #postContent h1 > code, 
+    #postContent h2 > code, 
+    #postContent h3 > code, 
+    #postContent h4 > code, 
+    #postContent h5 > code, 
+    #postContent h6 > code, 
+    #postContent blockquote > code
+    {
+        background-color: #eff1f588;
+    }
+
+    #postContent h1 > a, 
+    #postContent h2 > a, 
+    #postContent h3 > a, 
+    #postContent h4 > a, 
+    #postContent h5 > a, 
+    #postContent h6 > a
+    {
+        color: inherit;
+    }
+
+    #postContent a
+    {
+        color: #bac2cf;
+        text-decoration: underline;
+    }
+
+    #postContent a:hover
+    {
+        color: #347eff;
+    }
+
+    #postContent blockquote 
+    {
+        border-left: 5px solid #eff1f5;
+        padding: 0 10px;
+        margin-left: 0;
+        margin-right: 0;
+    }
+
+    #post .comment-header
+    {
+        width: 100%;
+        height: 35px;
+        line-height: 35px;
+
+        padding-left: 1em;
+        margin-bottom: 30px;
+        font-size: 14px;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        background: linear-gradient(to right, #347eff, #1ea3ff);
+    }
+    </style>
+    <div class="side-wrapper" v-show="contentReady">
+        <section id="postHeader">
+            <header class="post-title">
+                {{post.title}}
+            </header>
+        </section>
+        <section id="postContent" class="markdown github">
+        </section>
+    </div>
+    <aside class="side-bar" v-fixedsidebar>
+        <div>
+            <header class="side-bar-header">NAVIGATION</header>
+            <ul>
+                <li v-route:pop>
+                    GO BACK
+                </li>
+            </ul>
+        </div>
+        <div>
+            <header class="side-bar-header">CATALOGS</header>
+            <ul>
+                <template v-for="item in catalogs">
+                    <li :class="{active:currentCatalog === item.id}" @click="gotoCatalog(item.id)">
+                        {{item.title}}
+                    </li>
+                    <div class="sub-side-bar" v-if="item.catalogs && item.catalogs.length > 0">
+                        <ul>
+                            <li :class="{active:currentSubCatalog === subItem.id}" v-for="subItem in item.catalogs" @click="gotoCatalog(item.id, subItem.id)">
+                                {{subItem.title}}
+                            </li>
+                        </ul>
+                    </div>
+                </template>
+            </ul>
+        </div>
+    </aside>
+</div>

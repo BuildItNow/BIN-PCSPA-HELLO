@@ -1,0 +1,48 @@
+body
+{
+    font-family: "Avenir Next","Helvetica Neue", "Helvetica", "sans-serif";
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+}
+
+a
+{
+    color: #bac2cf;
+    cursor: pointer;
+
+    text-decoration: underline;
+}
+
+a:hover
+{
+    color: #347eff;
+}
+
+.btn
+{
+    border-radius: 0;
+    -webkit-box-shadow: none;
+    -moz-box-shadow: none;
+    box-shadow: none;
+    border-width: 1px;
+}
+
+img
+{
+    background-color: #eff1f5;
+}
+
+.loading-spinner
+{
+    margin-top: 0.5rem !important;
+}
+
+.loading-spinner .spinner-icon
+{
+    color: #347eff;
+}
+
+
+
+
+

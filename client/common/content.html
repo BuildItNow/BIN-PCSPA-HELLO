@@ -1,0 +1,151 @@
+<div id="pageContent">
+	<style>
+    #pageContent
+    {
+        padding-top: 80px;
+        margin: 0 auto;
+        max-width: 1024px;
+
+        position: relative;
+
+        overflow-y: hidden;: 
+    }
+
+    #pageContent .page-content
+    {
+        padding: 30px 20px;
+    }
+
+    #pageContent .page-content-wrapper
+    {
+        position: relative;
+    }
+
+    #pageContent .side-wrapper
+    {
+        margin-left: 220px;
+    }
+
+    #pageContent .side-bar
+    {
+        position: absolute;
+        top: 0px;
+        left: 0px; 
+        width: 200px;
+    }
+
+    #pageContent .fixed-side-bar-wrapper
+    {
+        position: fixed;
+        top: 80px;
+        bottom: 0;
+        width: 215px;
+        right: 0;
+    
+        padding: 30px 0 60px;
+
+        background-color: transparent;
+        overflow-y: scroll;
+        z-index: 1;
+    }
+
+    #pageContent .side-bar ul
+    {
+        padding: 0;
+        margin: 0;
+    }
+
+    #pageContent .side-bar ul li
+    {
+        list-style: none;
+
+        color: #bac2cf;
+
+        padding: 5px 0px 5px 15px;
+
+        font-size: 12px;
+        line-height: 1;
+        
+        margin-bottom: 15px;
+
+        display: block;
+        letter-spacing: 0.1em;
+        text-decoration: none;
+        font-weight: 500;
+        text-transform: uppercase;
+        border-left: 2px solid transparent;
+
+        transition: .2s color;
+
+        cursor: pointer;
+
+        text-overflow: ellipsis;
+        overflow: hidden;
+        word-break: keep-all;
+    }
+
+    #pageContent .side-bar li.active
+    {
+        border-left: 2px solid #347eff;
+        color: #347eff;
+    }
+
+    #pageContent .side-bar li:hover
+    {
+        color: #347eff;
+    }
+
+    #pageContent .side-bar .side-bar-header
+    {
+        width: 100%;
+
+        padding: 5px 15px;
+        margin-bottom: 15px;
+
+        font-size: 12px;
+        color: white;
+        font-weight: 700;
+        letter-spacing: 0.2em;
+
+        background: linear-gradient(to right, #347eff, #1ea3ff);
+    }
+
+    #pageContent .sub-side-bar
+    {
+        margin-left: 1.5em;
+    }
+
+    #pageContent .sub-side-bar ul li
+    {
+        font-size: 10px;
+        font-weight: normal;
+        letter-spacing: 0;
+
+        border: none;
+
+        padding: 2px 0 2px 10px;
+        margin-bottom: 10px;
+    }
+
+    #pageContent .sub-side-bar li.active
+    {
+        border: none;
+        color: #347eff;
+    }
+
+    #pageContent .sub-side-bar ul li:last-child
+    {
+        margin-bottom: 15px;
+    }
+
+    </style>
+    <section class="page-content" :style="{minHeight:minHeight}">
+        <route path="work(/*path)" view="view!work/index">
+            <path path="#" mock="work/detail"/>
+            <path path="work" mock="work/detail"/>
+        </route>
+        <route path="about(/*path)" view="view!about/index" opts.vm-data="code:{height:view.heightWithoutFooter()+'px'}"></route>
+        <route path="locate" view="view!common/locate" opts.vm-data="code:{height:view.heightWithoutFooter()+'px'}"></route>
+        <route path="signin" view="view!signin/index"></route>
+    </section>
+</div>
