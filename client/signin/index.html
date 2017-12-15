@@ -1,11 +1,18 @@
-<div id="signinIndex" class="page-content-wrapper">
-	<style>
+<div id="signinIndex" class="page-content-wrapper" :style="{height:height}">
+    <style>
 
     #signinIndex .board
     {
-        max-width: 320px;
+        position: absolute;
+
+        top: 50%;
+        left: 50%;
+
+        transform: translate(-50%, -50%);
+        -webkit-transform: translate(-50%, -50%);
+
+        width: 320px;
         padding: 20px;
-        margin: 80px auto;
 
         border: solid 1px #eff1f5;
         border-radius: 5px;
@@ -28,7 +35,15 @@
         background: #1ea3ff;
     }
 
-	</style>
+    @media (max-width: 320px)
+    {
+        #signinIndex .board
+        {
+            width: 280px;
+        }
+    }
+
+    </style>
     <div class="board" @keyup.enter="signin">
         <div class="form-group">
             <label>Username</label>
