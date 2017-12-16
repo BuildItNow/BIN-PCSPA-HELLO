@@ -1,4 +1,4 @@
-define(
+define("config/bpf_hash_globalConfig",
 {
 	name: "BIN-PC-SPA",
 	appID: "com.bin.pcspa",
@@ -48,7 +48,7 @@ define(
 			DataCenter:"application/dataCenter",
 			HUDManager:"bin/web/core/pcHudManager",	
 			NavigationController:"bin/web/core/navigationController",
-			Router:"bin/web/core/router"
+			Router:"bin/core/router"
 		},
 		ui:
 		{
@@ -58,7 +58,13 @@ define(
 		other:
 		{
 			bootstrap:"bootstrap"
-		}
+		},
+		requireScripts:
+		[
+			"common/content",
+			"work/index",
+			"work/detail"
+		]
 	},
 	packages:
 	[
